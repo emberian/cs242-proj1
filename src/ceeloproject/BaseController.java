@@ -22,7 +22,7 @@ public class BaseController implements Initializable {
     @FXML
     private void rollDice(ActionEvent event) {
         String res = g.playRound();
-        // animate
+        // animate ALLA DIS SHIT
         // set dice labels from g.dice
         // set result label
         System.out.println(res);
