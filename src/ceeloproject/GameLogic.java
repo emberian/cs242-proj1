@@ -7,7 +7,7 @@ package ceeloproject;
 
 /**
  *
- * @author csguest
+ * @author Rust and  Baha
  */
 public class GameLogic {
     public dice.LoadedDie dice[];
