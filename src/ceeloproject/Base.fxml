@@ -14,13 +14,13 @@
     vgap="15" hgap="15"
     id="gridp" stylesheets="/ceeloproject/styles.css">
 
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="1" text="Dice 1 Player 1" />
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="Dice 2 Player 1" />
-    <Label GridPane.columnIndex="3" GridPane.rowIndex="1" text="Dice 3 Player 1" />
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="1" text="Dice 1 Player 1" styleClass="fancytextp1" />
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="Dice 2 Player 1" styleClass="fancytextp1" />
+    <Label GridPane.columnIndex="3" GridPane.rowIndex="1" text="Dice 3 Player 1" styleClass="fancytextp1" />
     
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="2" text="Dice 1 Player 2" />
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="2" text="Dice 2 Player 2" />
-    <Label GridPane.columnIndex="3" GridPane.rowIndex="2" text="Dice 3 Player 2" />
+    <Label GridPane.columnIndex="1" GridPane.rowIndex="2" text="Dice 1 Player 2" styleClass="fancytextp2"/>
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="2" text="Dice 2 Player 2" styleClass="fancytextp2"/>
+    <Label GridPane.columnIndex="3" GridPane.rowIndex="2" text="Dice 3 Player 2" styleClass="fancytextp2"/>
     
-    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />   
+    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" styleClass="thisbuttonissofancy" />   
 </GridPane>

@@ -5,9 +5,26 @@
     -fx-background-color: #000000;
     -fx-alignment: center;
 }
-
+/*
 Label {
    
     -fx-text-fill: slateblue;
     -fx-font: italic 16px Tahoma;
+}
+*/
+.fancytextp1{
+   -fx-text-fill: slateblue;
+   -fx-font: italic 16px Tahoma;
+}
+
+.fancytextp2{
+   -fx-text-fill: forestgreen;
+   -fx-font: italic 16px Tahoma;
+}
+
+.thisbuttonissofancy{
+    -fx-font: bold italic 20pt Tahoma;
+    -fx-effect: dropshadow( one-pass-box , purple , 8 , 0.0 , 2 , 3 ); /*type, color, radius, feathering (1.0=100% opacity), X, -Y*/
+    -fx-background-color: #333333;
+    -fx-text-fill: white;
 }
