@@ -17,7 +17,7 @@ import javafx.scene.input.MouseEvent;
  * @author csguest
  */
 public class BaseController implements Initializable {
-    private Ceelo g = new Ceelo();
+    final private Ceelo g = new Ceelo();
     
     @FXML
     private void rollDice(ActionEvent event) {

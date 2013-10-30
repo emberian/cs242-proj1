@@ -1,8 +1,8 @@
 #gridp {
     -fx-border-style: solid;
-    -fx-border-color: black;
-    -fx-border-width: 1;
-    -fx-background-color: #000000;
+    -fx-border-color: linear-gradient(from 0% 0% to 100% 200%, repeat, transparent 25%, #710071 50%); /*type, color, radius, feathering (1.0=100% opacity), X, -Y*/;
+    -fx-border-width: 7;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, black 0%, #333333 50%);
     -fx-alignment: center;
 }
 /*

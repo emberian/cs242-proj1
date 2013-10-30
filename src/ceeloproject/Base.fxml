@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane
-    prefHeight="400" prefWidth="600"
+    prefHeight="395" prefWidth="730"
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="ceeloproject.BaseController"
     vgap="15" hgap="15"

@@ -138,12 +138,12 @@ public class Ceelo {
         int result = p1.compareTo(p2);
         if (result < 0) {
             p2_roundswon++;
-            return "Human number two wins, demonstrating his superiority in staring blankly at a display.";
+            return "Human number two wins, thus demonstrating his superiority in staring blankly at a display.";
         } else if (result == 0) {
            return "No human was the victor. Throw the dice once more.";
         } else {
             p1_roundswon++;
-            return "Human one won the round. Perhaps human two should work the button next time.";
+            return "Human one has won the round. Perhaps human two should work the button next time.";
         }
     }
     
