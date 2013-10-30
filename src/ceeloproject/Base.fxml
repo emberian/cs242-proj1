@@ -17,33 +17,33 @@
     
     <ImageView GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die1p1.png"/>
         </image>
     </ImageView>
     <ImageView GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die2p1.png"/>
         </image>
     </ImageView>
     <ImageView GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die3p1.png"/>
         </image>
     </ImageView>
 
     <ImageView GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die4p2.png"/>
         </image>
     </ImageView>
     <ImageView GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die5p2.png"/>
         </image>
     </ImageView>
     <ImageView GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER">
         <image>
-            <Image url="/ceeloproject/NoRoll.png"/>
+            <Image url="/ceeloproject/Die6p2.png"/>
         </image>
     </ImageView>
 
