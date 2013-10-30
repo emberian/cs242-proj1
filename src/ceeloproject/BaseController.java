@@ -13,19 +13,20 @@ import javafx.scene.input.MouseEvent;
  * @author csguest
  */
 public class BaseController implements Initializable {
+
     final private Ceelo g = new Ceelo();
-    
+
     @FXML
     private void rollDice(ActionEvent event) {
         String res = g.playRound();
         // animate ALLA DIS SHIT
         // set dice labels from g.dice
         // set result label
-        System.out.println(res);
+        Logger.dlog(res + System.lineSeparator());
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        Logger.dlog("----- starting ceelo -----" + System.lineSeparator());
+    }
 }
