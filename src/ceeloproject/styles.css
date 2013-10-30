@@ -30,11 +30,11 @@ Label {
 }
 
 .thisbuttonissofancy:hover{
-    -fx-background-color: #222222;
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, #333333 30%, #111111 60%);
     -fx-effect: dropshadow( one-pass-box , #cc00ff , 8 , 0.0 , 2 , 3 );
 }
 
 .thisbuttonissofancy:armed{
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, black 30%, #333333 60%);
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 200%, repeat, black 20%, #333333 60%);
     -fx-effect: dropshadow( one-pass-box , #cc00ff , 8 , 0.0 , 2 , 3 );
 }
