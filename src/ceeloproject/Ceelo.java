@@ -22,7 +22,7 @@ enum RollType {
  * 
  * @author Corey Richardson
  */
-class Player implements Comparable {
+class Player implements Comparable, Cloneable {
     // used for storing the roll result
     private RollType type;
     // used for storing the singleton/trips value
@@ -40,9 +40,9 @@ class Player implements Comparable {
         }
         determine_result();
     }
-
+    
     // TODO: constructor passing in the dice manually, which could be loaded
-    // (needs to check that the array length is 3)\
+    // (needs to check that the array length is 3)
     
     /**
      * Roll the dice.
@@ -56,6 +56,17 @@ class Player implements Comparable {
         determine_result();
     }
     
+    /**
+     * Get a copy of the internal dice.
+     */
+    public Die[] getDice() {
+        Die[] ds = new Die[3];
+        for (int i = 0; i < 3; i++) {
+            ds[i] = new Die(dice[i]);
+        }
+        return ds;
+    }
+
     // Figure out which result the player currently has.
     private void determine_result() {
         int a, b, c;

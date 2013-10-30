@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -13,14 +14,40 @@
     fx:controller="ceeloproject.BaseController"
     vgap="15" hgap="15"
     id="gridp" stylesheets="/ceeloproject/styles.css">
+    
+    <ImageView GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
+    <ImageView GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
+    <ImageView GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
 
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="1" text="Dice 1 Player 1" styleClass="fancytextp1" />
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="Dice 2 Player 1" styleClass="fancytextp1" />
-    <Label GridPane.columnIndex="3" GridPane.rowIndex="1" text="Dice 3 Player 1" styleClass="fancytextp1" />
+    <ImageView GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
+    <ImageView GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
+    <ImageView GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER">
+        <image>
+            <Image url="/ceeloproject/NoRoll.png"/>
+        </image>
+    </ImageView>
+
+    <Label id="statustext" GridPane.columnIndex="2" GridPane.rowIndex="3" text="Roll the dice to start the game!" GridPane.halignment="CENTER" styleClass="fancytextp2" />
     
-    <Label GridPane.columnIndex="1" GridPane.rowIndex="2" text="Dice 1 Player 2" styleClass="fancytextp2"/>
-    <Label GridPane.columnIndex="2" GridPane.rowIndex="2" text="Dice 2 Player 2" styleClass="fancytextp2"/>
-    <Label GridPane.columnIndex="3" GridPane.rowIndex="2" text="Dice 3 Player 2" styleClass="fancytextp2"/>
-    
-    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" styleClass="thisbuttonissofancy" />   
+    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" styleClass="thisbuttonissofancy" />   
 </GridPane>
