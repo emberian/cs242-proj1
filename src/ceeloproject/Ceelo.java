@@ -50,8 +50,9 @@ class Player implements Comparable {
     public void roll() {
         for (Die d : dice) {
             d.roll();
+            System.out.print(d.toString() + " ");
         }
-
+        System.out.println();
         determine_result();
     }
     
