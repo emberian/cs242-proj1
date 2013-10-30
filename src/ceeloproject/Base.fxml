@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane
-    prefHeight="395" prefWidth="730"
+    prefHeight="576" prefWidth="1024"
     xmlns:fx="http://javafx.com/fxml"
     fx:controller="ceeloproject.BaseController"
     vgap="15" hgap="15"
@@ -47,7 +47,7 @@
         </image>
     </ImageView>
 
-    <Label id="statustext" GridPane.columnIndex="2" GridPane.rowIndex="3" text="Roll the dice to start the game!" GridPane.halignment="CENTER" styleClass="fancytextp2" />
+    <Label id="statustext" GridPane.columnIndex="2" GridPane.rowIndex="3" text="Human One: Press the button to engage Ceelo." GridPane.halignment="CENTER" styleClass="fancytextp2" />
     
     <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" styleClass="thisbuttonissofancy" />   
 </GridPane>
