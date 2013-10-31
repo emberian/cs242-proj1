@@ -136,6 +136,10 @@ class Player implements Comparable, Cloneable {
     public int compareTo(Object o) {
         Player p = (Player) o;
 
+        if (type == RollType.None || p.type == RollType.None) {
+            return 0;
+        }
+
         if (type == p.type) {
             if (type == RollType.Point || type == RollType.Trips) {
                 return Integer.compare(extra_value, p.extra_value);
@@ -144,9 +148,27 @@ class Player implements Comparable, Cloneable {
             }
         }
 
-        if (type == RollType.LowSeq) {
+        if (type == RollType.Point && p.type == RollType.Trips) {
+            int res = Integer.compare(extra_value, p.extra_value);
+            if (res == 0) {
+                return -1;
+            } else {
+                return res;
+            }
+        }
+
+        if (type == RollType.Trips && p.type == RollType.Point) {
+            int res = Integer.compare(extra_value, p.extra_value);
+            if (res == 0) {
+                return 1;
+            } else {
+                return res;
+            }
+        }
+
+        if (type == RollType.LowSeq || p.type == RollType.HighSeq) {
             return -1;
-        } else if (type == RollType.HighSeq) {
+        } else if (type == RollType.HighSeq || p.type == RollType.LowSeq) {
             return 1;
         } else {
             return 0;
