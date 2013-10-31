@@ -1,11 +1,9 @@
-/** 
+/**
  * Ceelo.java contains all game logic.
- * 
- * @author The Brickettes (Corey Richardson and Adam Kimball)
- * CS242
- * Project #1
+ *
+ * @author The Brickettes (Corey Richardson and Adam Kimball) CS242 Project #1
  * 10/30/13
- * 
+ *
  */
 package ceeloproject;
 
@@ -96,7 +94,7 @@ class Player implements Comparable, Cloneable {
      */
     public boolean needsReroll() {
         return type == RollType.None;
-    } 
+    }
 
     // Figure out which result the player currently has.
     private void determine_result() {
@@ -174,19 +172,20 @@ public class Ceelo {
      * @return A string describing who won this round.
      */
     public String playRound() {
+        p1AnimType = false;
+        p2AnimType = false;
+
         if (!p1.needsReroll() && !p2.needsReroll()) {
             p1AnimType = true;
-            p1AnimType = true;
+            p2AnimType = true;
             p1.roll();
             p2.roll();
         } else {
             if (p1.needsReroll()) {
                 p1AnimType = true;
-                p2AnimType = false;
                 p1.roll();
             }
             if (p2.needsReroll()) {
-                p1AnimType = false;
                 p2AnimType = true;
                 p2.roll();
             }
@@ -209,12 +208,12 @@ public class Ceelo {
     public int getP1RoundsWon() {
         return p1_roundswon;
     }
-    
-    public boolean getP1AnimType(){
+
+    public boolean getP1AnimType() {
         return p1AnimType;
     }
-    
-    public boolean getP2AnimType(){
+
+    public boolean getP2AnimType() {
         return p2AnimType;
     }
 
