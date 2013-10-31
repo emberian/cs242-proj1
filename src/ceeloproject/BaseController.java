@@ -29,8 +29,8 @@ public class BaseController implements Initializable {
     private Label status;
 
     final private Ceelo g = new Ceelo();
-   
-    private int roundinit = 0;
+    private boolean roundinit = true;
+    private boolean roundnum = true;
 
     @FXML
     private void rollDice(ActionEvent event) {
@@ -68,7 +68,16 @@ public class BaseController implements Initializable {
      */
     public void resetRollAnimation() {
         Die[][] ds = g.getPlayerDice();
-        if (roundinit == 1){
+        if (roundinit == false){
+             if (roundnum){
+                p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
+                p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
+                p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
+                p2dice.setImage(1, "/ceeloproject/roll1p1.gif");
+                p2dice.setImage(2, "/ceeloproject/roll2p1.gif");
+                p2dice.setImage(3, "/ceeloproject/roll3p1.gif");
+                roundnum = false;
+             }
              if (g.getP1AnimType()){
                 p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
                 p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
@@ -80,14 +89,14 @@ public class BaseController implements Initializable {
                 p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
              }
          }
-         if (roundinit == 0){
+         if (roundinit == true){
                 p1dice.setImage(1, "/ceeloproject/DieBlankp1.png");
                 p1dice.setImage(2, "/ceeloproject/DieBlankp1.png");
                 p1dice.setImage(3, "/ceeloproject/DieBlankp1.png");
                 p2dice.setImage(1, "/ceeloproject/DieBlankp2.png");
                 p2dice.setImage(2, "/ceeloproject/DieBlankp2.png");
                 p2dice.setImage(3, "/ceeloproject/DieBlankp2.png");
-                roundinit = 1;
+                roundinit = false;
             
          }
      
