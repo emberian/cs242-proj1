@@ -220,7 +220,7 @@ public class Ceelo {
             return "No human was the victor. Throw the dice once more.";
         } else {
             p1_roundswon++;
-            return "\t\t\tHuman one has won the round." + System.lineSeparator() + "Perhaps human two should work the button next time?";
+            return "\t\tHuman one has won the round." + System.lineSeparator() + "Perhaps human two should work the button next time?";
         }
     }
 
