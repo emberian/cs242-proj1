@@ -1,4 +1,4 @@
-/*
+/**
     This is a Cascading Style sheet for our FXML file. It keeps everything
     nice and organized.
 */
@@ -20,11 +20,16 @@ Label {
 }
 */
 .fancytextp1{
-   -fx-text-fill: slateblue;
-   -fx-font: italic 16px Tahoma;
+   -fx-text-fill: #cc00cc;
+   -fx-font: italic 12px Tahoma;
 }
 
 .fancytextp2{
+    -fx-text-fill: steelblue;
+    -fx-font: italic 12px Tahoma;
+}
+
+.statustext{
    -fx-text-fill: #d16800;
    -fx-font: italic 16px Tahoma;
 }

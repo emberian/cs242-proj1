@@ -1,3 +1,12 @@
+/**
+ *BaseController is a class that controls animation and text output to the display.
+ * 
+ * @author The Brickettes (Corey Richardson and Adam Kimball)
+ * CS 242
+ * Project #1
+ * 
+ */
+
 package ceeloproject;
 
 import dice.Die;
@@ -9,16 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author The Brickettes (Corey Richardson and Adam Kimball)
- * CS 242
- * Project #1
- * 
- */
-/**
- * BaseController is a class that controls animation and text output to the display.
- */
+
 public class BaseController implements Initializable {
 
     @FXML
@@ -63,27 +63,38 @@ public class BaseController implements Initializable {
         resetRollAnimation();
     }
 
+    /**
+     * This controls the actual animations of the dice.
+     */
     public void resetRollAnimation() {
-         if (roundinit == 1){
-            p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
-            p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
-            p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
-            p2dice.setImage(1, "/ceeloproject/roll1p2.gif");
-            p2dice.setImage(2, "/ceeloproject/roll2p2.gif");
-            p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
+        Die[][] ds = g.getPlayerDice();
+        if (roundinit == 1){
+             if (g.getP1AnimType()){
+                p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
+                p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
+                p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
+             }
+             if (g.getP2AnimType()){
+                p2dice.setImage(1, "/ceeloproject/roll1p2.gif");
+                p2dice.setImage(2, "/ceeloproject/roll2p2.gif");
+                p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
+             }
          }
          if (roundinit == 0){
-            p1dice.setImage(1, "/ceeloproject/DieBlankp1.png");
-            p1dice.setImage(2, "/ceeloproject/DieBlankp1.png");
-            p1dice.setImage(3, "/ceeloproject/DieBlankp1.png");
-            p2dice.setImage(1, "/ceeloproject/DieBlankp2.png");
-            p2dice.setImage(2, "/ceeloproject/DieBlankp2.png");
-            p2dice.setImage(3, "/ceeloproject/DieBlankp2.png");
-            roundinit = 1;
+                p1dice.setImage(1, "/ceeloproject/DieBlankp1.png");
+                p1dice.setImage(2, "/ceeloproject/DieBlankp1.png");
+                p1dice.setImage(3, "/ceeloproject/DieBlankp1.png");
+                p2dice.setImage(1, "/ceeloproject/DieBlankp2.png");
+                p2dice.setImage(2, "/ceeloproject/DieBlankp2.png");
+                p2dice.setImage(3, "/ceeloproject/DieBlankp2.png");
+                roundinit = 1;
+            
          }
      
-    }
-
+}
+    /**
+     * This sets dice images to reflect the value of the top of each die.
+     */
     public void setImagesToRollResult() {
         Die[][] ds = g.getPlayerDice();
         p1dice.setImage(1, "/ceeloproject/Die" + ds[0][0].getTop() + "p1.png");

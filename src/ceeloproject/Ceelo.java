@@ -1,5 +1,11 @@
-/*
- This file contains all of the game logic, presenting a simple OO interface.
+/** 
+ * Ceelo.java contains all game logic.
+ * 
+ * @author The Brickettes (Corey Richardson and Adam Kimball)
+ * CS242
+ * Project #1
+ * 10/30/13
+ * 
  */
 package ceeloproject;
 
@@ -38,8 +44,6 @@ enum RollType {
  *
  * A player in Cee-lo has three dice. To determine which player has won a round,
  * use the `compareTo` method. To roll a player's dice, use the `roll` method.
- *
- * @author The Brickettes (Corey Richardson and Adam Kimball)
  */
 class Player implements Comparable, Cloneable {
 
@@ -88,11 +92,11 @@ class Player implements Comparable, Cloneable {
     }
 
     /**
-     * Check if the player needs to re-roll (meaningless combination)
+     * Check if the player needs to re-roll in case of a meaningless combination
      */
     public boolean needsReroll() {
         return type == RollType.None;
-    }
+    } 
 
     // Figure out which result the player currently has.
     private void determine_result() {
@@ -100,7 +104,6 @@ class Player implements Comparable, Cloneable {
         a = dice[0].getTop();
         b = dice[1].getTop();
         c = dice[2].getTop();
-
         if (a == b && b == c) {
             type = RollType.Trips;
             extra_value = a;
@@ -154,17 +157,16 @@ class Player implements Comparable, Cloneable {
 }
 
 /**
- * A game of Cee-lo.
- *
- * @author Corey Richardson and Adam Kimball
+ * This is the controller for the actual Ceelo game.
  */
 public class Ceelo {
 
     // todo: add a constructor that lets you pass in the players to use.
     private Player p1 = new Player(), p2 = new Player();
-
     private int p1_roundswon;
     private int p2_roundswon;
+    private boolean p1AnimType = true;
+    private boolean p2AnimType = true;
 
     /**
      * Rolls both players.
@@ -173,17 +175,22 @@ public class Ceelo {
      */
     public String playRound() {
         if (!p1.needsReroll() && !p2.needsReroll()) {
+            p1AnimType = true;
+            p1AnimType = true;
             p1.roll();
             p2.roll();
         } else {
             if (p1.needsReroll()) {
+                p1AnimType = true;
+                p2AnimType = false;
                 p1.roll();
             }
             if (p2.needsReroll()) {
+                p1AnimType = false;
+                p2AnimType = true;
                 p2.roll();
             }
         }
-        
         int result = p1.compareTo(p2);
         if (result < 0) {
             p2_roundswon++;
@@ -201,6 +208,14 @@ public class Ceelo {
      */
     public int getP1RoundsWon() {
         return p1_roundswon;
+    }
+    
+    public boolean getP1AnimType(){
+        return p1AnimType;
+    }
+    
+    public boolean getP2AnimType(){
+        return p2AnimType;
     }
 
     /**
