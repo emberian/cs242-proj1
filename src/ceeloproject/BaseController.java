@@ -1,12 +1,10 @@
 /**
- *BaseController is a class that controls animation and text output to the display.
- * 
- * @author The Brickettes (Corey Richardson and Adam Kimball)
- * CS 242
- * Project #1
- * 
+ * BaseController is a class that controls animation and text output to the
+ * display.
+ *
+ * @author The Brickettes (Corey Richardson and Adam Kimball) CS 242 Project #1
+ *
  */
-
 package ceeloproject;
 
 import dice.Die;
@@ -17,7 +15,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-
 
 public class BaseController implements Initializable {
 
@@ -37,7 +34,7 @@ public class BaseController implements Initializable {
         final String res = g.playRound();
         resetRollAnimation();
         // Ghetto timer.
-        Thread t = new Thread(){
+        Thread t = new Thread() {
             @Override
             public void run() {
                 try {
@@ -54,7 +51,8 @@ public class BaseController implements Initializable {
         };
         t.start();
         // Log the response for later debugging
-        Logger.dlog(res.trim() + System.lineSeparator());
+        Logger.dlog(res.replaceAll("(\t|\n|\r)", "") + System.lineSeparator());
+
         Logger.dlog("----------------" + System.lineSeparator());
     }
 
@@ -69,8 +67,8 @@ public class BaseController implements Initializable {
      */
     public void resetRollAnimation() {
         Die[][] ds = g.getPlayerDice();
-        if (roundinit == false){
-             if (roundnum){
+        if (roundinit == false) {
+            if (roundnum) {
                 p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
                 p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
                 p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
@@ -78,30 +76,31 @@ public class BaseController implements Initializable {
                 p2dice.setImage(2, "/ceeloproject/roll2p2.gif");
                 p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
                 roundnum = false;
-             }
-             if (g.getP1AnimType()){
+            }
+            if (g.getP1AnimType()) {
                 p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
                 p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
                 p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
-             }
-             if (g.getP2AnimType()){
+            }
+            if (g.getP2AnimType()) {
                 p2dice.setImage(1, "/ceeloproject/roll1p2.gif");
                 p2dice.setImage(2, "/ceeloproject/roll2p2.gif");
                 p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
-             }
-         }
-         if (roundinit == true){
-                p1dice.setImage(1, "/ceeloproject/DieBlankp1.png");
-                p1dice.setImage(2, "/ceeloproject/DieBlankp1.png");
-                p1dice.setImage(3, "/ceeloproject/DieBlankp1.png");
-                p2dice.setImage(1, "/ceeloproject/DieBlankp2.png");
-                p2dice.setImage(2, "/ceeloproject/DieBlankp2.png");
-                p2dice.setImage(3, "/ceeloproject/DieBlankp2.png");
-                roundinit = false;
-            
-         }
-     
-}
+            }
+        }
+        if (roundinit == true) {
+            p1dice.setImage(1, "/ceeloproject/DieBlankp1.png");
+            p1dice.setImage(2, "/ceeloproject/DieBlankp1.png");
+            p1dice.setImage(3, "/ceeloproject/DieBlankp1.png");
+            p2dice.setImage(1, "/ceeloproject/DieBlankp2.png");
+            p2dice.setImage(2, "/ceeloproject/DieBlankp2.png");
+            p2dice.setImage(3, "/ceeloproject/DieBlankp2.png");
+            roundinit = false;
+
+        }
+
+    }
+
     /**
      * This sets dice images to reflect the value of the top of each die.
      */
