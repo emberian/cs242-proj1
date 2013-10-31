@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * A helper class for logging.
  * 
- * @author Corey Richardson
+ * @author Corey Richardson == 0
  */
 public class Logger {
 

@@ -54,7 +54,8 @@ public class BaseController implements Initializable {
         };
         t.start();
         // Log the response for later debugging
-        Logger.dlog(res + System.lineSeparator());
+        Logger.dlog(res.trim() + System.lineSeparator());
+        Logger.dlog("----------------" + System.lineSeparator());
     }
 
     @Override
@@ -73,9 +74,9 @@ public class BaseController implements Initializable {
                 p1dice.setImage(1, "/ceeloproject/roll1p1.gif");
                 p1dice.setImage(2, "/ceeloproject/roll2p1.gif");
                 p1dice.setImage(3, "/ceeloproject/roll3p1.gif");
-                p2dice.setImage(1, "/ceeloproject/roll1p1.gif");
-                p2dice.setImage(2, "/ceeloproject/roll2p1.gif");
-                p2dice.setImage(3, "/ceeloproject/roll3p1.gif");
+                p2dice.setImage(1, "/ceeloproject/roll1p2.gif");
+                p2dice.setImage(2, "/ceeloproject/roll2p2.gif");
+                p2dice.setImage(3, "/ceeloproject/roll3p2.gif");
                 roundnum = false;
              }
              if (g.getP1AnimType()){
