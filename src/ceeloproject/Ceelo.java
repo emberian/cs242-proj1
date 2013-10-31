@@ -39,7 +39,7 @@ enum RollType {
  * A player in Cee-lo has three dice. To determine which player has won a round,
  * use the `compareTo` method. To roll a player's dice, use the `roll` method.
  *
- * @author Corey Richardson
+ * @author The Brickettes (Corey Richardson and Adam Kimball)
  */
 class Player implements Comparable, Cloneable {
 
@@ -88,7 +88,7 @@ class Player implements Comparable, Cloneable {
     }
 
     /**
-     * Check if the player needs to reroll (meaningless combination)
+     * Check if the player needs to re-roll (meaningless combination)
      */
     public boolean needsReroll() {
         return type == RollType.None;
@@ -156,7 +156,7 @@ class Player implements Comparable, Cloneable {
 /**
  * A game of Cee-lo.
  *
- * @author Corey Richardson
+ * @author Corey Richardson and Adam Kimball
  */
 public class Ceelo {
 

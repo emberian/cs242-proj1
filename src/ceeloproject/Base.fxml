@@ -23,7 +23,7 @@
         <DiceBox fx:id="p2dice"  />
     </HBox>
 
-    <Label id="statustext" fx:id="status" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Human One: Press the button to stop the dice and engage Ceelo!" GridPane.halignment="CENTER" styleClass="fancytextp2" />
+    <Label id="statustext" fx:id="status" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Human One: Press the button to roll the dice and engage Ceelo!" GridPane.halignment="CENTER" styleClass="fancytextp2" />
     
     <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" styleClass="thisbuttonissofancy" />   
 </GridPane>
