@@ -11,9 +11,28 @@ enum RollType {
     LowSeq,
     Point,
     Trips,
-    HighSeq
+    HighSeq;
+
+    @Override
+    public String toString() {
+        switch (this) {
+            case None:
+                return "None";
+            case LowSeq:
+                return "LowSeq";
+            case Point:
+                return "Point";
+            case Trips:
+                return "Trips";
+            case HighSeq:
+                return "HighSeq";
+            default:
+                throw new AssertionError("Non-exhaustive switch");
+        }
+    }
 }
 
+// todo: split Player into public class
 /**
  * A player.
  *
@@ -54,6 +73,7 @@ class Player implements Comparable, Cloneable {
         }
         Logger.dlog(System.lineSeparator());
         determine_result();
+        Logger.dlog("Result: extra_value=" + extra_value + ", type=" + type.toString() + System.lineSeparator());
     }
 
     /**
@@ -65,6 +85,13 @@ class Player implements Comparable, Cloneable {
             ds[i] = new Die(dice[i]);
         }
         return ds;
+    }
+
+    /**
+     * Check if the player needs to reroll (meaningless combination)
+     */
+    public boolean needsReroll() {
+        return type == RollType.None;
     }
 
     // Figure out which result the player currently has.
@@ -145,9 +172,18 @@ public class Ceelo {
      * @return A string describing who won this round.
      */
     public String playRound() {
-        p1.roll();
-        p2.roll();
-
+        if (!p1.needsReroll() && !p2.needsReroll()) {
+            p1.roll();
+            p2.roll();
+        } else {
+            if (p1.needsReroll()) {
+                p1.roll();
+            }
+            if (p2.needsReroll()) {
+                p2.roll();
+            }
+        }
+        
         int result = p1.compareTo(p2);
         if (result < 0) {
             p2_roundswon++;
@@ -172,5 +208,15 @@ public class Ceelo {
      */
     public int getP2RoundsWon() {
         return p2_roundswon;
+    }
+
+    /**
+     * @return An array of {player1 dice, player2 dice}
+     */
+    public Die[][] getPlayerDice() {
+        Die[][] ds = new Die[3][2];
+        ds[0] = p1.getDice();
+        ds[1] = p2.getDice();
+        return ds;
     }
 }

@@ -7,6 +7,7 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import ceeloproject.*?>
 
 <GridPane
     prefHeight="576" prefWidth="1024"
@@ -15,39 +16,14 @@
     vgap="15" hgap="15"
     id="gridp" stylesheets="/ceeloproject/styles.css">
     
-    <ImageView GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll1p1.gif"/>
-        </image>
-    </ImageView>
-    <ImageView GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll2p1.gif"/>
-        </image>
-    </ImageView>
-    <ImageView GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll3p1.gif"/>
-        </image>
-    </ImageView>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <DiceBox fx:id="p1dice"  />
+    </HBox>
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <DiceBox fx:id="p2dice"  />
+    </HBox>
 
-    <ImageView GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll1p2.gif"/>
-        </image>
-    </ImageView>
-    <ImageView GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll2p2.gif"/>
-        </image>
-    </ImageView>
-    <ImageView GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.halignment="CENTER">
-        <image>
-            <Image url="/ceeloproject/roll3p2.gif"/>
-        </image>
-    </ImageView>
-
-    <Label id="statustext" GridPane.columnIndex="2" GridPane.rowIndex="3" text="Human One: Press the button to engage Ceelo." GridPane.halignment="CENTER" styleClass="fancytextp2" />
+    <Label id="statustext" fx:id="status" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Human One: Press the button to engage Ceelo." GridPane.halignment="CENTER" styleClass="fancytextp2" />
     
-    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" styleClass="thisbuttonissofancy" />   
+    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" styleClass="thisbuttonissofancy" />   
 </GridPane>

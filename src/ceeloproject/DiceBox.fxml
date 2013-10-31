@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml" spacing="10" >
+    <ImageView fx:id="image1">
+        <image>
+            <Image url="/ceeloproject/roll1p1.gif"/>
+        </image>
+    </ImageView>
+    <ImageView fx:id="image2">
+        <image>
+            <Image url="/ceeloproject/roll2p1.gif"/>
+        </image>
+    </ImageView>
+    <ImageView fx:id="image3">
+        <image>
+            <Image url="/ceeloproject/roll3p1.gif"/>
+        </image>
+    </ImageView>
+</fx:root>
