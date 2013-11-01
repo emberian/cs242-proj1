@@ -149,21 +149,11 @@ class Player implements Comparable, Cloneable {
         }
 
         if (type == RollType.Point && p.type == RollType.Trips) {
-            int res = Integer.compare(extra_value, p.extra_value);
-            if (res == 0) {
-                return -1;
-            } else {
-                return res;
-            }
+			return -1;
         }
 
         if (type == RollType.Trips && p.type == RollType.Point) {
-            int res = Integer.compare(extra_value, p.extra_value);
-            if (res == 0) {
-                return 1;
-            } else {
-                return res;
-            }
+			return 1;
         }
 
         if (type == RollType.LowSeq || p.type == RollType.HighSeq) {
