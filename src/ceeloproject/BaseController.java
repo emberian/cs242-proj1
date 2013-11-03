@@ -14,6 +14,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class BaseController implements Initializable {
@@ -24,6 +25,12 @@ public class BaseController implements Initializable {
     private DiceBox p2dice;
     @FXML
     private Label status;
+    @FXML
+    private Label p1;
+    @FXML
+    private Label p2;
+    @FXML
+    private Button rollbutton;
 
     final private Ceelo g = new Ceelo();
     private boolean roundinit = true;
@@ -45,20 +52,24 @@ public class BaseController implements Initializable {
                     public void run() {
                         setImagesToRollResult();
                         status.setText(res);
+                        p1.setText("Human One        Rounds Won: " + g.getP1RoundsWon());
+                        p2.setText("Human Two        Rounds Won: " + g.getP2RoundsWon());
+                        rollbutton.setDisable(false);
                     }
                 });
             }
         };
+        rollbutton.setDisable(true);
         t.start();
         // Log the response for later debugging
         Logger.dlog(res.replaceAll("(\t|\n|\r)", "") + System.lineSeparator());
 
-        Logger.dlog("----------------" + System.lineSeparator());
+        Logger.dlog(System.lineSeparator() + "------------------------------" + System.lineSeparator() + System.lineSeparator());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Logger.dlog("----- starting ceelo -----" + System.lineSeparator());
+        Logger.dlog("----- Initializing Ceelo -----" + System.lineSeparator() + System.lineSeparator());
         resetRollAnimation();
     }
 

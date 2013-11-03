@@ -190,15 +190,19 @@ public class Ceelo {
         if (!p1.needsReroll() && !p2.needsReroll()) {
             p1AnimType = true;
             p2AnimType = true;
+            Logger.dlog("P1 Rolls: ");
             p1.roll();
+            Logger.dlog("P2 Rolls: ");
             p2.roll();
         } else {
             if (p1.needsReroll()) {
                 p1AnimType = true;
+                Logger.dlog("P1 Rolls: ");
                 p1.roll();
             }
             if (p2.needsReroll()) {
                 p2AnimType = true;
+                Logger.dlog("P2 Rolls: ");
                 p2.roll();
             }
         }

@@ -16,15 +16,15 @@
     vgap="15" hgap="15"
     id="gridp" stylesheets="/ceeloproject/styles.css">
     
-    <Label id="player1" fx:id="p1" GridPane.columnIndex="1" GridPane.rowIndex="1" text="Human One" GridPane.halignment="CENTER" styleClass="fancytextp1" />
+    <Label id="player1" fx:id="p1" GridPane.columnIndex="1" GridPane.rowIndex="1" text="Human One        Rounds Won: 0" GridPane.halignment="CENTER" styleClass="fancytextp1" />
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
         <DiceBox fx:id="p1dice"  />
     </HBox>
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="3">
         <DiceBox fx:id="p2dice"  />
     </HBox>
-    <Label id="player2" fx:id="p2" GridPane.columnIndex="1" GridPane.rowIndex="4" text="Human Two" GridPane.halignment="CENTER" styleClass="fancytextp2" />
+    <Label id="player2" fx:id="p2" GridPane.columnIndex="1" GridPane.rowIndex="4" text="Human Two        Rounds Won: 0" GridPane.halignment="CENTER" styleClass="fancytextp2" />
     <Label id="statustext" fx:id="status" GridPane.columnIndex="1" GridPane.rowIndex="5" text="Human One: Press the button to roll the dice and engage Ceelo!" GridPane.halignment="CENTER" styleClass="statustext" />
     
-    <Button text="Roll" id="rollbutton" onAction="#rollDice" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" styleClass="thisbuttonissofancy" />   
+    <Button text="Roll" id="rollbutton" fx:id="rollbutton" onAction="#rollDice" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" styleClass="thisbuttonissofancy" />   
 </GridPane>
