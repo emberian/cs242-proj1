@@ -4,7 +4,7 @@
  * @author The Brickettes (Corey Richardson and Adam Kimball) CS242 Project #1
  * 10/30/13
  * Project 1
- * 
+ *
  */
 package ceeloproject;
 
@@ -19,6 +19,7 @@ public class Ceelo {
     private int p2_roundswon;
     private boolean p1AnimType = true;
     private boolean p2AnimType = true;
+    private boolean rolled_yet = false;
 
     /**
      * Rolls both players.
@@ -29,7 +30,8 @@ public class Ceelo {
         p1AnimType = false;
         p2AnimType = false;
 
-        if (!p1.needsReroll() && !p2.needsReroll()) {
+        if (!rolled_yet || (!p1.needsReroll() && !p2.needsReroll())) {
+            rolled_yet = true;
             p1AnimType = true;
             p2AnimType = true;
             Logger.dlog("P1 Rolls: ");
@@ -37,7 +39,7 @@ public class Ceelo {
             Logger.dlog("P2 Rolls: ");
             p2.roll();
         } else {
-            if (p1.needsReroll()) {
+			if (p1.needsReroll()) {
                 p1AnimType = true;
                 Logger.dlog("P1 Rolls: ");
                 p1.roll();
@@ -48,6 +50,7 @@ public class Ceelo {
                 p2.roll();
             }
         }
+
         int result = p1.compareTo(p2);
         if (result < 0) {
             p2_roundswon++;
@@ -66,14 +69,14 @@ public class Ceelo {
     public int getP1RoundsWon() {
         return p1_roundswon;
     }
-    
+
     /**
      * @return whether or not Player 1's Dice roll should be animated
      */
     public boolean getP1AnimType() {
         return p1AnimType;
     }
-    
+
     /**
      * @return whether or not Player 2's Dice roll should be animated
      */

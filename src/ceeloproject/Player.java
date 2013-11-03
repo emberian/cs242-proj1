@@ -1,17 +1,13 @@
 /**
  * A player in Cee-lo has three dice. To determine which player has won a round,
  * use the `compareTo` method. To roll a player's dice, use the `roll` method.
- * 
+ *
  * @author The Brickettes (Corey Richardson and Adam Kimball) CS242 Project #1
- * 10/30/13
- * Project 1
+ * 10/30/13 Project 1
  */
-
 package ceeloproject;
 
 import dice.Die;
-
-
 
 // todo: split Player into public class?
 class Player implements Comparable, Cloneable {
@@ -69,6 +65,8 @@ class Player implements Comparable, Cloneable {
 
     // Figure out which result the player currently has.
     private void determine_result() {
+        this.type = RollType.None;
+
         int a, b, c;
         a = dice[0].getTop();
         b = dice[1].getTop();
@@ -120,11 +118,11 @@ class Player implements Comparable, Cloneable {
         }
 
         if (type == RollType.Point && p.type == RollType.Trips) {
-			return -1;
+            return -1;
         }
 
         if (type == RollType.Trips && p.type == RollType.Point) {
-			return 1;
+            return 1;
         }
 
         if (type == RollType.LowSeq || p.type == RollType.HighSeq) {

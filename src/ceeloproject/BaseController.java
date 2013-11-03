@@ -70,7 +70,7 @@ public class BaseController implements Initializable {
     /**
      * This initializes the file logger.
      * @param url
-     * @param rb 
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
