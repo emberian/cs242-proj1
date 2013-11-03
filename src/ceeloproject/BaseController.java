@@ -67,6 +67,11 @@ public class BaseController implements Initializable {
         Logger.dlog(System.lineSeparator() + "------------------------------" + System.lineSeparator() + System.lineSeparator());
     }
 
+    /**
+     * This initializes the file logger.
+     * @param url
+     * @param rb 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Logger.dlog("----- Initializing Ceelo -----" + System.lineSeparator() + System.lineSeparator());

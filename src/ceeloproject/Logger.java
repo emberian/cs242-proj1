@@ -1,5 +1,5 @@
 /**
- * Logger.java is the class that handles text output to a file
+ * Logger.java is the class that handles text output to a file.
  * 
  * @author The Brickettes (Corey Richardson and Adam Kimball)
  * CS242
@@ -15,7 +15,6 @@ import java.io.IOException;
 /**
  * A helper class for logging.
  * 
- * @author Corey Richardson == 0
  */
 public class Logger {
 
