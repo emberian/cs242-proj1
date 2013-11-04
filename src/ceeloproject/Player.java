@@ -38,7 +38,7 @@ class Player implements Comparable, Cloneable {
     public void roll() {
         for (Die d : dice) {
             d.roll();
-            Logger.dlog(d.toString() + " ");
+            Logger.dlog(d.toString() + ", ");
         }
         Logger.dlog(System.lineSeparator());
         determine_result();
